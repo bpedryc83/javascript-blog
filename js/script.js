@@ -1,11 +1,12 @@
  'use strict';
  
- /* document.getElementById('test-button').addEventListener('click', function(){
-    const links = document.querySelectorAll('.titles a');
-    console.log('links:', links);
+/* document.getElementById('test-button').addEventListener('click', function(){
+    const links1 = document.querySelectorAll('.titles a');
+    console.log('links:', links1);
   }); */
 
   const titleClickHandler = function(event){
+    event.preventDefault();
     const clickedElement = this;
     console.log('Link was clicked!');
     console.log(event);
@@ -28,11 +29,16 @@
         activeArticle.classList.remove('active');
     }
 
-    /* get 'href' attribute from the clicked link */
+    /* [DONE] get 'href' attribute from the clicked link */
+    const aAttribute = clickedElement.getAttribute('href');
+    console.log(aAttribute); 
 
-    /* find the correct article using the selector (value of 'href' attribute) */
+    /* [DONE] find the correct article using the selector (value of 'href' attribute) */
+    const newActiveArticle = document.querySelector(aAttribute);
+    console.log("new: ", newActiveArticle);
 
-    /* add class 'active' to the correct article */
+    /* [DONE] add class 'active' to the correct article */
+    newActiveArticle.classList.add('active');
   }
   
   const links = document.querySelectorAll('.titles a');
