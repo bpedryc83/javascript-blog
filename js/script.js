@@ -1,4 +1,3 @@
-{
 'use strict';
 
 /* document.getElementById('test-button').addEventListener('click', function(){
@@ -13,7 +12,7 @@ const optSelectorTo = {
   articleAuthor: '.post .post-author',
   listOfAuthors: '.list.authors',
   listOfTags: '.list.tags',
-}
+};
 
 const optCloudClassCount = 5,
   optCloudClassPrefix = 'tag-size-';
@@ -157,13 +156,10 @@ function generateTags(){
         allTags[tag]++;
       }
 
-    /* insert HTML of all the links into the tags wrapper */
-    tagWrapper.innerHTML = tagHTML;
-
-
-  /* END LOOP: for every article: */  
+      /* insert HTML of all the links into the tags wrapper */
+      tagWrapper.innerHTML = tagHTML;
+      /* END LOOP: for every article: */  
     }
-
   }
 
   /* [NEW] find list of tags in right column */
@@ -249,7 +245,7 @@ function generateAuthors(){
   const allArticles = document.querySelectorAll(optSelectorTo.article);
   let sidebarAuthorsHTML = '';
 
-    /* START LOOP: for every article: */
+  /* START LOOP: for every article: */
   for (let article of allArticles){
     const authorWrapper = article.querySelector(optSelectorTo.articleAuthor);
     const author = article.getAttribute('data-author');
@@ -291,4 +287,3 @@ function addClickListenersToAuthors(){
   }
 }
 addClickListenersToAuthors();
-}
