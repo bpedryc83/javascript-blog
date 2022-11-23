@@ -261,7 +261,7 @@ function generateAuthors(){
   }
 
   for (let author in allAuthors){
-    const authorForSidebarHTML = '<li><a href="#"><span class="author-name">' + author + '(' + allAuthors[author] + ')</span></a></li>';
+    const authorForSidebarHTML = '<li><a href="#' + author + '"><span class="author-name">' + author + '(' + allAuthors[author] + ')</span></a></li>';
     sidebarAuthorsHTML = sidebarAuthorsHTML + authorForSidebarHTML;
   }
 
@@ -281,7 +281,7 @@ function authorClickHandler(event){
 }
 
 function addClickListenersToAuthors(){
-  const links = document.querySelectorAll('.post .post-author a');
+  const links = document.querySelectorAll('.post .post-author a, .list.authors a');
   for(let link of links){
     link.addEventListener('click', authorClickHandler);
   }
